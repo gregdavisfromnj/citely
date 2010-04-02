@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://citely.sourceforge.net/citation"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://citely.sourceforge.net/citation"
+	attributeFormDefault="qualified">
+
+
+	<simpleType name="Publication">
+		<restriction base="string">
+			<enumeration value="article">
+				<annotation>
+					<documentation>
+						An article from a journal or magazine.
+						Required fields: author, title, journal, year
+						Optional fields: volume, number, pages, month, note, key
+					</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="book">
+				<annotation>
+					<documentation>
+						A book with an explicit publisher.
+						Required fields: author/editor, title, publisher, year
+						Optional fields: volume, series, address, edition, month, note, key
+					</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="booklet">
+				<annotation>
+					<documentation>
+						A work that is printed and bound, but without a named publisher or
+						sponsoring institution.
+						Required fields: title
+						Optional fields: author, howpublished, address, month, year, note, key
+					</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="conference">
+				<annotation>
+					<documentation>
+						The same as inproceedings, included for Scribe compatibility.
+						Required fields: author, title, booktitle, year
+						Optional fields: editor, pages, organization, publisher, address, month,
+						note, key</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="inbook">
+				<annotation>
+					<documentation>
+						A part of a book, usually untitled. May be a chapter (or section or
+						whatever) and/or a range of pages.
+						Required fields: author/editor, title, chapter/pages, publisher, year
+						Optional fields: volume, series, address, edition, month, note,
+						key</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="incollection">
+				<annotation>
+					<documentation>
+						A part of a book having its own title.
+						Required fields: author, title, booktitle, year
+						Optional fields: editor, pages, organization, publisher, address, month,
+						note, key</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="inproceedings">
+				<annotation>
+					<documentation>
+						An article in a conference proceedings.
+						Required fields: author, title, booktitle, year
+						Optional fields: editor, series, pages, organization, publisher, address,
+						month, note, key</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="manual">
+				<annotation>
+					<documentation>
+						Technical documentation.
+						Required fields: title
+						Optional fields: author, organization, address, edition, month, year,
+						note, key</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="mastersthesis">
+				<annotation>
+					<documentation>
+						A Master's thesis.
+						Required fields: author, title, school, year
+						Optional fields: address, month, note, key</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="misc">
+				<annotation>
+					<documentation>
+						For use when nothing else fits.
+						Required fields: none
+						Optional fields: author, title, howpublished, month, year, note, key
+					</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="phdthesis">
+				<annotation>
+					<documentation>
+						A Ph.D. thesis.
+						Required fields: author, title, school, year
+						Optional fields: address, month, note, key</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="proceedings">
+				<annotation>
+					<documentation>
+						The proceedings of a conference.
+						Required fields: title, year
+						Optional fields: editor, publisher, organization, address, month, note,
+						key</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="techreport">
+				<annotation>
+					<documentation>
+						A report published by a school or other institution, usually
+						numbered within a series.
+						Required fields: author, title, institution, year
+						Optional fields: type, number, address, month, note, key</documentation>
+				</annotation>
+			</enumeration>
+			<enumeration value="unpublished">
+				<annotation>
+					<documentation>
+						A document having an author and title, but not formally published.
+						Required fields: author, title, note
+						Optional fields: month, year, key</documentation>
+				</annotation>
+			</enumeration>
+		</restriction>
+	</simpleType>
+
+
+
+	<complexType name="Citation">
+		<annotation>
+			<documentation>This schema, including some parts and documentation,
+				is derived from the Wikipedia description of BiBTeX records at
+				http://en.wikipedia.org/wiki/BibTeX. It's not authoritative.
+				Wikipedia just had the information I need in a form that can be
+				schema-fied quickly. So thanks, Wikipedia.</documentation>
+		</annotation>
+		<sequence>
+
+			<element name="address" type="string">
+				<annotation>
+					<documentation>
+						Publisher's address (usually just the city, but
+						can be the full address for lesser-known
+						publishers)
+					</documentation>
+				</annotation>
+			</element>
+			<element name="annote" type="string">
+				<annotation>
+					<documentation>
+						An annotation for annotated bibliography styles
+						(not typical)
+					</documentation>
+				</annotation>
+			</element>
+			<element name="author" type="string">
+				<annotation>
+					<documentation>
+						The name(s) of the author(s) (in the case of
+						more than one author, separated by and)
+					</documentation>
+				</annotation>
+			</element>
+			<element name="booktitle" type="string">
+				<annotation>
+					<documentation>
+						The title of the book, if only part of it is
+						being cited
+					</documentation>
+				</annotation>
+			</element>
+			<element name="chapter" type="string">
+				<annotation>
+					<documentation>The chapter number</documentation>
+				</annotation>
+			</element>
+			<element name="crossref" type="string">
+				<annotation>
+					<documentation>
+						The key of the cross-referenced entry
+					</documentation>
+				</annotation>
+			</element>
+			<element name="edition" type="string">
+				<annotation>
+					<documentation>
+						The edition of a book, long form (such as
+						"first" or "second")
+					</documentation>
+				</annotation>
+			</element>
+			<element name="editor" type="string">
+				<annotation>
+					<documentation>
+						The name(s) of the editor(s)
+					</documentation>
+				</annotation>
+			</element>
+			<element name="eprint" type="string">
+				<annotation>
+					<documentation>
+						A specification of an electronic publication,
+						often a preprint or a technical report
+					</documentation>
+				</annotation>
+			</element>
+			<element name="howpublished" type="string">
+				<annotation>
+					<documentation>
+						How it was published, if the publishing method
+						is nonstandard
+					</documentation>
+				</annotation>
+			</element>
+			<element name="institution" type="string">
+				<annotation>
+					<documentation>
+						The institution that was involved in the
+						publishing, but not necessarily the publisher
+					</documentation>
+				</annotation>
+			</element>
+			<element name="journal" type="string">
+				<annotation>
+					<documentation>
+						The journal or magazine the work was published
+						in
+					</documentation>
+				</annotation>
+			</element>
+			<element name="key" type="string">
+				<annotation>
+					<documentation>
+						A hidden field used for specifying or overriding
+						the alphabetical order of entries (when the
+						"author" and "editor" fields are missing). Note
+						that this is very different from the key
+						(mentioned just after this list) that is used to
+						cite or cross-reference the entry.
+					</documentation>
+				</annotation>
+			</element>
+			<element name="month" type="string">
+				<annotation>
+					<documentation>
+						The month of publication (or, if unpublished,
+						the month of creation)
+					</documentation>
+				</annotation>
+			</element>
+			<element name="note" type="string">
+				<annotation>
+					<documentation>
+						Miscellaneous extra information
+					</documentation>
+				</annotation>
+			</element>
+			<element name="number" type="string">
+				<annotation>
+					<documentation>
+						The "number" of a journal, magazine, or
+						tech-report, if applicable. (Most publications
+						have a "volume", but no "number" field.)
+					</documentation>
+				</annotation>
+			</element>
+			<element name="organization" type="string">
+				<annotation>
+					<documentation>
+						The conference sponsor
+					</documentation>
+				</annotation>
+			</element>
+			<element name="pages" type="string">
+				<annotation>
+					<documentation>
+						Page numbers, separated either by commas or
+						double-hyphens.
+					</documentation>
+				</annotation>
+			</element>
+			<element name="publisher" type="string">
+				<annotation>
+					<documentation>The publisher's name</documentation>
+				</annotation>
+			</element>
+			<element name="school" type="string">
+				<annotation>
+					<documentation>
+						The school where the thesis was written
+					</documentation>
+				</annotation>
+			</element>
+			<element name="series" type="string">
+				<annotation>
+					<documentation>
+						The series of books the book was published in
+						(e.g. "The Hardy Boys" or "Lecture Notes in
+						Computer Science")
+					</documentation>
+				</annotation>
+			</element>
+			<element name="title" type="string">
+				<annotation>
+					<documentation>The title of the work</documentation>
+				</annotation>
+			</element>
+			<element name="type" type="string">
+				<annotation>
+					<documentation>
+						The type of tech-report, for example, "Research
+						Note"
+					</documentation>
+				</annotation>
+			</element>
+			<element name="url" type="string">
+				<annotation>
+					<documentation>The WWW address</documentation>
+				</annotation>
+			</element>
+			<element name="volume" type="string">
+				<annotation>
+					<documentation>
+						The volume of a journal or multi-volume book
+					</documentation>
+				</annotation>
+			</element>
+			<element name="year" type="string">
+				<annotation>
+					<documentation>
+						The year of publication (or, if unpublished, the
+						year of creation)
+					</documentation>
+				</annotation>
+			</element>
+
+
+			<element name="publicationType" type="tns:Publication" />
+			<element name="entryKey" type="string"></element>
+		</sequence>
+	</complexType>
+</schema>

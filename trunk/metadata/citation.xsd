@@ -5,8 +5,13 @@
 	attributeFormDefault="qualified">
 
 
-	<simpleType name="Publication">
-		<restriction base="string">
+	<simpleType name="PublicationType">
+        <annotation>
+        	<documentation>The type of publication.  For example, book or conference proceedings.
+        	  This value dictates which fields are mandatory or optional for a citation.
+        	</documentation>
+        </annotation>
+        <restriction base="string">
 			<enumeration value="article">
 				<annotation>
 					<documentation>
@@ -346,7 +351,7 @@
 			</element>
 
 
-			<element name="publicationType" type="tns:Publication" />
+			<element name="publicationType" type="tns:PublicationType" />
 			<element name="entryKey" type="string"></element>
 		</sequence>
 	</complexType>

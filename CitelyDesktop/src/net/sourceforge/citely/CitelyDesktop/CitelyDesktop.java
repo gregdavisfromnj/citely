@@ -17,6 +17,8 @@
  */
 package net.sourceforge.citely.CitelyDesktop;
 
+import org.eclipse.swt.widgets.*;
+
 /**
  * 
  */
@@ -26,8 +28,16 @@ public class CitelyDesktop {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Display display = new Display ();
+		Shell shell = new Shell(display);
+		shell.open ();
+		while (!shell.isDisposed ()) {
+			if (!display.readAndDispatch ()) display.sleep ();
+		}
+		display.dispose ();
+	
 	}
+	
+	
 
 }

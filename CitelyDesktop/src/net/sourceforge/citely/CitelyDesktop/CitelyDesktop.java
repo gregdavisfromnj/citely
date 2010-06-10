@@ -17,6 +17,9 @@
  */
 package net.sourceforge.citely.CitelyDesktop;
 
+import java.io.InputStream;
+
+import org.eclipse.swt.graphics.*;
 import org.eclipse.swt.widgets.*;
 
 /**
@@ -25,11 +28,27 @@ import org.eclipse.swt.widgets.*;
 public class CitelyDesktop {
 
 	/**
+	 * This is the main class which starts up a main shell window.
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		// setup the main window
 		Display display = new Display ();
 		Shell shell = new Shell(display);
+		
+		// setup the window's icon
+		Class desktopClass = CitelyDesktop.class;
+		ClassLoader desktopClassLoader = desktopClass.getClassLoader();
+		InputStream imgStream =  desktopClassLoader.getResourceAsStream("images/C.png");
+		if (imgStream != null) {
+			Image img = new Image(display, imgStream);
+			shell.setImage(img);
+		}
+
+		// setup other window properties
+		shell.setText("Citely");
+		
+		// go go go!
 		shell.open ();
 		while (!shell.isDisposed ()) {
 			if (!display.readAndDispatch ()) display.sleep ();

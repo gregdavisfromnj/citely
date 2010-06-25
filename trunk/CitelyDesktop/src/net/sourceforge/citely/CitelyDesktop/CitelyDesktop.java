@@ -37,7 +37,7 @@ public class CitelyDesktop {
 		Shell shell = new Shell(display);
 		
 		// setup the window's icon
-		Class desktopClass = CitelyDesktop.class;
+		Class<CitelyDesktop> desktopClass = CitelyDesktop.class;
 		ClassLoader desktopClassLoader = desktopClass.getClassLoader();
 		InputStream imgStream =  desktopClassLoader.getResourceAsStream("images/C.png");
 		if (imgStream != null) {

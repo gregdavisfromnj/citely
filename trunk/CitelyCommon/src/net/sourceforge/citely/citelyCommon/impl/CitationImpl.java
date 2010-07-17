@@ -14,7 +14,13 @@ package net.sourceforge.citely.citelyCommon.impl;
 public class CitationImpl extends org.apache.xmlbeans.impl.values.XmlComplexContentImpl implements net.sourceforge.citely.citelyCommon.Citation
 {
     
-    public CitationImpl(org.apache.xmlbeans.SchemaType sType)
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3843251984076815074L;
+
+
+	public CitationImpl(org.apache.xmlbeans.SchemaType sType)
     {
         super(sType);
     }

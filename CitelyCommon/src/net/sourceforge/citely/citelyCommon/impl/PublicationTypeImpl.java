@@ -14,7 +14,12 @@ package net.sourceforge.citely.citelyCommon.impl;
 public class PublicationTypeImpl extends org.apache.xmlbeans.impl.values.JavaStringEnumerationHolderEx implements net.sourceforge.citely.citelyCommon.PublicationType
 {
     
-    public PublicationTypeImpl(org.apache.xmlbeans.SchemaType sType)
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8245240031356433612L;
+
+	public PublicationTypeImpl(org.apache.xmlbeans.SchemaType sType)
     {
         super(sType, false);
     }

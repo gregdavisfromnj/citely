@@ -1,3 +1,20 @@
+/**
+ *  Copyright 2010 Gregory J. Davis
+ *
+ *  This file is part of CitelyDesktop.
+ *  CitelyDesktop is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  CitelyDesktop is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with CitelyDesktop.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package net.sourceforge.citely.CitelyDesktop;
 
 import java.io.InputStream;
@@ -9,19 +26,22 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Text;
 
 public class MainWindow {
 
-	Display display = null;
-	Shell shell = null;
+	private Display _display = null;
+	private Shell _shell = null;
+	
+	public MainWindow() {
+		// setup the main window
+		_display = new Display();
+		_shell = new Shell(_display);
+		_shell.setText("Citely");
+	}
 
 	public void show() {
 
-		// setup the main window
-		display = new Display();
-		shell = new Shell(display);
-		shell.setText("Citely");
+
 
 		// setup the window's icon
 		Class<CitelyDesktop> desktopClass = CitelyDesktop.class;
@@ -29,20 +49,20 @@ public class MainWindow {
 		InputStream imgStream = desktopClassLoader
 				.getResourceAsStream("images/C.png");
 		if (imgStream != null) {
-			Image img = new Image(display, imgStream);
-			shell.setImage(img);
+			Image img = new Image(_display, imgStream);
+			_shell.setImage(img);
 		}
 
 		// setup other window properties
 		Rectangle displayRect = Display.getCurrent().getClientArea();
-		shell.setSize((int) (displayRect.width * 0.61803),
+		_shell.setSize((int) (displayRect.width * 0.61803),
 				(int) (displayRect.height * 0.61803));
 
 		// add a menubar
-		Menu mainMenu = new Menu(shell, SWT.BAR);
-		Menu fileMenu = new Menu(shell, SWT.DROP_DOWN);
-		Menu editMenu = new Menu(shell, SWT.DROP_DOWN);
-		Menu helpMenu = new Menu(shell, SWT.DROP_DOWN);
+		Menu mainMenu = new Menu(_shell, SWT.BAR);
+		Menu fileMenu = new Menu(_shell, SWT.DROP_DOWN);
+		Menu editMenu = new Menu(_shell, SWT.DROP_DOWN);
+		Menu helpMenu = new Menu(_shell, SWT.DROP_DOWN);
 
 		MenuItem fileMenuHeader = new MenuItem(mainMenu, SWT.CASCADE);
 		fileMenuHeader.setText("&File");
@@ -77,20 +97,24 @@ public class MainWindow {
 		MenuItem helpAboutItem = new MenuItem(helpMenu, SWT.PUSH);
 		helpAboutItem.setText("&About");
 
-		shell.setMenuBar(mainMenu);
+		_shell.setMenuBar(mainMenu);
 
 		// add a dummy text area
-		Text textArea = new Text(shell, SWT.CENTER | SWT.WRAP | SWT.MULTI);
-		textArea.setBounds(shell.getClientArea());
+		// Text textArea = new Text(shell, SWT.CENTER | SWT.WRAP | SWT.MULTI);
+		// textArea.setBounds(shell.getClientArea());
+
+		NavPanel navPanel = new NavPanel(_shell, SWT.CENTER );
+		navPanel.setBounds(_shell.getClientArea());
+		//navPanel.setBackground(new Color(_display, 255, 0, 255));
 
 		// go go go!
-		shell.pack();
-		shell.open();
-		while (!shell.isDisposed()) {
-			if (!display.readAndDispatch()) {
-				display.sleep();
+		_shell.pack();
+		_shell.open();
+		while (!_shell.isDisposed()) {
+			if (!_display.readAndDispatch()) {
+				_display.sleep();
 			}
 		}
-		display.dispose();
+		_display.dispose();
 	}
 }

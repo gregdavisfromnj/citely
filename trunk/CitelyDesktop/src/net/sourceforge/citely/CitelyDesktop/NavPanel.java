@@ -18,6 +18,7 @@
 package net.sourceforge.citely.CitelyDesktop;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
@@ -28,12 +29,28 @@ public class NavPanel extends org.eclipse.swt.widgets.Composite {
 
 	public NavPanel(Composite parent, int style) {
 		super(parent, SWT.NONE);
-		// TODO Auto-generated constructor stub
+		FillLayout fillLayout = new FillLayout(SWT.VERTICAL);
+		this.setLayout(fillLayout);
 		
-		Button foo = new Button(this, SWT.PUSH);
-		foo.setText("FOO!");
-		foo.setSize(60, 20);
-	//	foo.setBackgroundColor(Color.GRAY);
+		Button SearchCitations = new Button(this, SWT.PUSH);
+		SearchCitations.setText("Search");
+		SearchCitations.setSize(60, 20);
+		
+		Button CreateCitation = new Button(this, SWT.PUSH);
+		CreateCitation.setText("New Citation");
+		CreateCitation.setSize(60, 20);
+		
+		Button DeleteSelection = new Button(this, SWT.PUSH);
+		DeleteSelection.setText("Delete Selection");
+		DeleteSelection.setSize(60, 20);
+		
+		Button EditSelection = new Button(this, SWT.PUSH);
+		EditSelection.setText("Edit Selection");
+		EditSelection.setSize(60, 20);
+		
+		Button ShowDetails = new Button(this, SWT.PUSH);
+		ShowDetails.setText("Show Details");
+		ShowDetails.setSize(60, 20);
 		
 		this.pack();
 	}

@@ -22,10 +22,13 @@ import java.io.InputStream;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
 
 public class MainWindow {
 
@@ -99,14 +102,18 @@ public class MainWindow {
 
 		_shell.setMenuBar(mainMenu);
 
-		// add a dummy text area
-		// Text textArea = new Text(shell, SWT.CENTER | SWT.WRAP | SWT.MULTI);
-		// textArea.setBounds(shell.getClientArea());
+		GridLayout gridLayout = new GridLayout();
+		gridLayout.numColumns = 2;
+		_shell.setLayout(gridLayout);
 
 		NavPanel navPanel = new NavPanel(_shell, SWT.CENTER );
-		navPanel.setBounds(_shell.getClientArea());
-		//navPanel.setBackground(new Color(_display, 255, 0, 255));
+		//navPanel.setBounds(_shell.getClientArea());
+	
+		Text textArea = new Text(_shell, SWT.CENTER | SWT.WRAP | SWT.MULTI);
+		//textArea.setBounds(_shell.getClientArea());
 
+		
+		
 		// go go go!
 		_shell.pack();
 		_shell.open();

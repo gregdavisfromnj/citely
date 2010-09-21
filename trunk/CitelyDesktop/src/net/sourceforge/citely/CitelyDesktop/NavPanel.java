@@ -18,7 +18,7 @@
 package net.sourceforge.citely.CitelyDesktop;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
@@ -29,8 +29,8 @@ public class NavPanel extends org.eclipse.swt.widgets.Composite {
 
 	public NavPanel(Composite parent, int style) {
 		super(parent, SWT.NONE);
-		FillLayout fillLayout = new FillLayout(SWT.VERTICAL);
-		this.setLayout(fillLayout);
+		RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
+		this.setLayout(rowLayout);
 		
 		Button SearchCitations = new Button(this, SWT.PUSH);
 		SearchCitations.setText("Search");

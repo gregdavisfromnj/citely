@@ -30,6 +30,10 @@ public class CitelyDesktop {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		// TODO make a "query-selection" model here.. something for
+		// MainWindow widgets to grab data from, and subscribe to change
+		// events when the user does stuff.
+		
 		MainWindow mainWindow = new MainWindow();
 		mainWindow.show();
 	}

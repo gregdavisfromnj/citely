@@ -22,13 +22,12 @@ import java.io.InputStream;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Rectangle;
-import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Text;
 
 public class MainWindow {
 
@@ -43,9 +42,6 @@ public class MainWindow {
 	}
 
 	public void show() {
-
-
-
 		// setup the window's icon
 		Class<CitelyDesktop> desktopClass = CitelyDesktop.class;
 		ClassLoader desktopClassLoader = desktopClass.getClassLoader();
@@ -61,7 +57,7 @@ public class MainWindow {
 		_shell.setSize((int) (displayRect.width * 0.61803),
 				(int) (displayRect.height * 0.61803));
 
-		// add a menubar
+		// add a menubar, fill with the usual stuff
 		Menu mainMenu = new Menu(_shell, SWT.BAR);
 		Menu fileMenu = new Menu(_shell, SWT.DROP_DOWN);
 		Menu editMenu = new Menu(_shell, SWT.DROP_DOWN);
@@ -103,16 +99,24 @@ public class MainWindow {
 		_shell.setMenuBar(mainMenu);
 
 		GridLayout gridLayout = new GridLayout();
-		gridLayout.numColumns = 2;
+		gridLayout.numColumns = 4;
 		_shell.setLayout(gridLayout);
 
-		NavPanel navPanel = new NavPanel(_shell, SWT.CENTER );
-		//navPanel.setBounds(_shell.getClientArea());
-	
-		Text textArea = new Text(_shell, SWT.CENTER | SWT.WRAP | SWT.MULTI);
-		//textArea.setBounds(_shell.getClientArea());
-
+		// add a navbar/control-surface, user initiates major actions here 
+		ControlPanel controlPanel = new ControlPanel(_shell, SWT.NONE);
+		GridData controlPanelData = new GridData(GridData.FILL, GridData.BEGINNING, false, false);
+		controlPanel.setLayoutData(controlPanelData);
 		
+		
+		// whatever the user does, is reflected here
+		QueryPanel queryPanel = new QueryPanel(_shell, SWT.FILL);
+		GridData queryPanelData = new GridData(GridData.FILL, GridData.FILL, true, true);
+		queryPanel.setLayoutData(queryPanelData);
+		
+		// this is a logical description of what the user is viewing in queryPanel
+		TrackPanel trackPanel = new TrackPanel(_shell, SWT.NONE);
+		GridData trackPanelData = new GridData(GridData.FILL, GridData.BEGINNING, false, false);
+		trackPanel.setLayoutData(trackPanelData);
 		
 		// go go go!
 		_shell.pack();

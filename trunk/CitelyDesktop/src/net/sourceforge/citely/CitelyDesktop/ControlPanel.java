@@ -25,32 +25,28 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * 
  */
-public class NavPanel extends org.eclipse.swt.widgets.Composite {
+public class ControlPanel extends org.eclipse.swt.widgets.Composite {
 
-	public NavPanel(Composite parent, int style) {
-		super(parent, SWT.NONE);
+	public ControlPanel(Composite parent, int style) {
+		super(parent, style);
 		RowLayout rowLayout = new RowLayout(SWT.VERTICAL);
+		rowLayout.pack = false;
 		this.setLayout(rowLayout);
 		
 		Button SearchCitations = new Button(this, SWT.PUSH);
 		SearchCitations.setText("Search");
-		SearchCitations.setSize(60, 20);
 		
 		Button CreateCitation = new Button(this, SWT.PUSH);
 		CreateCitation.setText("New Citation");
-		CreateCitation.setSize(60, 20);
 		
 		Button DeleteSelection = new Button(this, SWT.PUSH);
 		DeleteSelection.setText("Delete Selection");
-		DeleteSelection.setSize(60, 20);
 		
 		Button EditSelection = new Button(this, SWT.PUSH);
 		EditSelection.setText("Edit Selection");
-		EditSelection.setSize(60, 20);
 		
 		Button ShowDetails = new Button(this, SWT.PUSH);
 		ShowDetails.setText("Show Details");
-		ShowDetails.setSize(60, 20);
 		
 		this.pack();
 	}

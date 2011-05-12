@@ -28,7 +28,7 @@ import org.eclipse.swt.widgets.Label;
  * search.  In other words, "based on what you've been searching for, you should look at
  * this."
  */
-public class TrackPanel extends org.eclipse.swt.widgets.Composite {
+public class TrackPanel extends Composite {
 
 	/**
 	 * Set this out in a vertical orientation. 

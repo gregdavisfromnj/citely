@@ -28,7 +28,7 @@ import org.eclipse.swt.widgets.TableItem;
 /**
  * 
  */
-public class QueryPanel extends org.eclipse.swt.widgets.Composite {
+public class QueryPanel extends Composite {
 
 	public QueryPanel(Composite parent, int style) {
 		super(parent, style);

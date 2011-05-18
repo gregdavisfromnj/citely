@@ -46,7 +46,7 @@ public class MainWindow {
 		Class<CitelyDesktop> desktopClass = CitelyDesktop.class;
 		ClassLoader desktopClassLoader = desktopClass.getClassLoader();
 		InputStream imgStream = desktopClassLoader
-				.getResourceAsStream("images/C.png");
+				.getResourceAsStream("icons/C.png");
 		if (imgStream != null) {
 			Image img = new Image(_display, imgStream);
 			_shell.setImage(img);

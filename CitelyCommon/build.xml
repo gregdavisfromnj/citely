@@ -9,7 +9,7 @@
     </path>
 
     <target name="init">
-        <property name="xmlbeans.home" value="/usr/share/java/xmlbeans"/>
+        <property name="xmlbeans.home" value="lib/xmlbeans"/>
         <echo message="xmlbeans.home: ${xmlbeans.home}"/>
 
         <!-- check for xbean.jar from binary distribution -->

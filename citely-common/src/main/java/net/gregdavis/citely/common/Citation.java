@@ -10,17 +10,41 @@ import javax.persistence.Id;
 
 @Entity
 public class Citation {
-    private int id;
 
+    private int id;
     private String address;
     private String annote;
-
+    private String author;
+    private String booktitle;
+    private String chapter;
+    private String crossref;
+    private String edition;
+    private String editor;
+    private String eprint;
+    private String howpublished;
+    private String institution;
+    private String journal;
+    private String key;
+    private String month;
+    private String note;
+    private String number;
+    private String organization;
+    private String pages;
+    private String publisher;
+    private String school;
+    private String series;
+    private String title;
+    private String type;
+    private String url;
+    private String volume;
+    private String year;
+    private PublicationType publicationType;
 
     /**
      * Gets the "entryKey" element
      */
     @Id
-    int getId() {
+    public int getId() {
         return id;
     }
 
@@ -28,7 +52,7 @@ public class Citation {
     /**
      * Sets the "entryKey" element
      */
-    void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -36,7 +60,7 @@ public class Citation {
      * String
      * Gets the "address" element
      */
-    String getAddress() {
+    public String getAddress() {
         return address;
     }
 
@@ -44,7 +68,7 @@ public class Citation {
     /**
      * Sets the "address" element
      */
-    void setAddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -52,7 +76,7 @@ public class Citation {
     /**
      * Gets the "annote" element
      */
-    String getAnnote() {
+    public String getAnnote() {
         return annote;
     }
 
@@ -60,7 +84,7 @@ public class Citation {
     /**
      * Sets the "annote" element
      */
-    void setAnnote(String annote) {
+    public void setAnnote(String annote) {
         this.annote = annote;
     }
 
@@ -68,15 +92,15 @@ public class Citation {
     /**
      * Gets the "author" element
      */
-    String getAuthor() {
-        return Author;
+    public String getAuthor() {
+        return author;
     }
 
 
     /**
      * Sets the "author" element
      */
-    void setAuthor(String author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -84,15 +108,15 @@ public class Citation {
     /**
      * Gets the "booktitle" element
      */
-    String getBooktitle() {
-        return Booktitle;
+    public String getBooktitle() {
+        return booktitle;
     }
 
 
     /**
      * Sets the "booktitle" element
      */
-    void setBooktitle(String booktitle) {
+    public void setBooktitle(String booktitle) {
         this.booktitle = booktitle;
     }
 
@@ -100,15 +124,15 @@ public class Citation {
     /**
      * Gets the "chapter" element
      */
-    String getChapter() {
-        return Chapter;
+    public String getChapter() {
+        return chapter;
     }
 
 
     /**
      * Sets the "chapter" element
      */
-    void setChapter(String chapter) {
+    public void setChapter(String chapter) {
         this.chapter = chapter;
     }
 
@@ -116,15 +140,15 @@ public class Citation {
     /**
      * Gets the "crossref" element
      */
-    String getCrossref() {
-        return Crossref;
+    public String getCrossref() {
+        return crossref;
     }
 
 
     /**
      * Sets the "crossref" element
      */
-    void setCrossref(String crossref) {
+    public void setCrossref(String crossref) {
         this.crossref = crossref;
     }
 
@@ -132,15 +156,15 @@ public class Citation {
     /**
      * Gets the "edition" element
      */
-    String getEdition() {
-        return Edition;
+    public String getEdition() {
+        return edition;
     }
 
 
     /**
      * Sets the "edition" element
      */
-    void setEdition(String edition) {
+    public void setEdition(String edition) {
         this.edition = edition;
     }
 
@@ -148,15 +172,15 @@ public class Citation {
     /**
      * Gets the "editor" element
      */
-    String getEditor() {
-        return Editor;
+    public String getEditor() {
+        return editor;
     }
 
 
     /**
      * Sets the "editor" element
      */
-    void setEditor(String editor) {
+    public void setEditor(String editor) {
         this.editor = editor;
     }
 
@@ -164,15 +188,15 @@ public class Citation {
     /**
      * Gets the "eprint" element
      */
-    String getEprint() {
-        return Eprint;
+    public String getEprint() {
+        return eprint;
     }
 
 
     /**
      * Sets the "eprint" element
      */
-    void setEprint(String eprint) {
+    public void setEprint(String eprint) {
         this.eprint = eprint;
     }
 
@@ -180,15 +204,15 @@ public class Citation {
     /**
      * Gets the "howpublished" element
      */
-    String getHowpublished() {
-        return Howpublished;
+    public String getHowpublished() {
+        return howpublished;
     }
 
 
     /**
      * Sets the "howpublished" element
      */
-    void setHowpublished(String howpublished) {
+    public void setHowpublished(String howpublished) {
         this.howpublished = howpublished;
     }
 
@@ -196,15 +220,15 @@ public class Citation {
     /**
      * Gets the "institution" element
      */
-    String getInstitution() {
-        return Institution;
+    public String getInstitution() {
+        return institution;
     }
 
 
     /**
      * Sets the "institution" element
      */
-    void setInstitution(String institution) {
+    public void setInstitution(String institution) {
         this.institution = institution;
     }
 
@@ -212,15 +236,15 @@ public class Citation {
     /**
      * Gets the "journal" element
      */
-    String getJournal() {
-        return Journal;
+    public String getJournal() {
+        return journal;
     }
 
 
     /**
      * Sets the "journal" element
      */
-    void setJournal(String journal) {
+    public void setJournal(String journal) {
         this.journal = journal;
     }
 
@@ -228,15 +252,15 @@ public class Citation {
     /**
      * Gets the "key" element
      */
-    String getKey() {
-        return Key;
+    public String getKey() {
+        return key;
     }
 
 
     /**
      * Sets the "key" element
      */
-    void setKey(String key) {
+    public void setKey(String key) {
         this.key = key;
     }
 
@@ -244,15 +268,15 @@ public class Citation {
     /**
      * Gets the "month" element
      */
-    String getMonth() {
-        return Month;
+    public String getMonth() {
+        return month;
     }
 
 
     /**
      * Sets the "month" element
      */
-    void setMonth(String month) {
+    public void setMonth(String month) {
         this.month = month;
     }
 
@@ -260,15 +284,15 @@ public class Citation {
     /**
      * Gets the "note" element
      */
-    String getNote() {
-        return Note;
+    public String getNote() {
+        return note;
     }
 
 
     /**
      * Sets the "note" element
      */
-    void setNote(String note) {
+    public void setNote(String note) {
         this.note = note;
     }
 
@@ -276,14 +300,14 @@ public class Citation {
     /**
      * Gets the "number" element
      */
-    String getNumber() {
-        return Number;
+    public String getNumber() {
+        return number;
     }
 
     /**
      * Sets the "number" element
      */
-    void setNumber(String number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
@@ -291,15 +315,15 @@ public class Citation {
     /**
      * Gets the "organization" element
      */
-    String getOrganization() {
-        return Organization;
+    public String getOrganization() {
+        return organization;
     }
 
 
     /**
      * Sets the "organization" element
      */
-    void setOrganization(String organization) {
+    public void setOrganization(String organization) {
         this.organization = organization;
     }
 
@@ -307,15 +331,15 @@ public class Citation {
     /**
      * Gets the "pages" element
      */
-    String getPages() {
-        return Pages;
+    public String getPages() {
+        return pages;
     }
 
 
     /**
      * Sets the "pages" element
      */
-    void setPages(String pages) {
+    public void setPages(String pages) {
         this.pages = pages;
     }
 
@@ -323,15 +347,15 @@ public class Citation {
     /**
      * Gets the "publisher" element
      */
-    String getPublisher() {
-        return Publisher;
+    public String getPublisher() {
+        return publisher;
     }
 
 
     /**
      * Sets the "publisher" element
      */
-    void setPublisher(String publisher) {
+    public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
 
@@ -339,15 +363,15 @@ public class Citation {
     /**
      * Gets the "school" element
      */
-    String getSchool() {
-        return School;
+    public String getSchool() {
+        return school;
     }
 
 
     /**
      * Sets the "school" element
      */
-    void setSchool(String school) {
+    public void setSchool(String school) {
         this.school = school;
     }
 
@@ -355,15 +379,15 @@ public class Citation {
     /**
      * Gets the "series" element
      */
-    String getSeries() {
-        return Series;
+    public String getSeries() {
+        return series;
     }
 
 
     /**
      * Sets the "series" element
      */
-    void setSeries(String series) {
+    public void setSeries(String series) {
         this.series = series;
     }
 
@@ -371,15 +395,15 @@ public class Citation {
     /**
      * Gets the "title" element
      */
-    String getTitle() {
-        return Title;
+    public String getTitle() {
+        return title;
     }
 
 
     /**
      * Sets the "title" element
      */
-    void setTitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -387,15 +411,15 @@ public class Citation {
     /**
      * Gets the "type" element
      */
-    String getType() {
-        return Type;
+    public String getType() {
+        return type;
     }
 
 
     /**
      * Sets the "type" element
      */
-    void setType(String type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -403,15 +427,15 @@ public class Citation {
     /**
      * Gets the "url" element
      */
-    String getUrl() {
-        return Url;
+    public String getUrl() {
+        return url;
     }
 
 
     /**
      * Sets the "url" element
      */
-    void setUrl(String url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 
@@ -419,15 +443,15 @@ public class Citation {
     /**
      * Gets the "volume" element
      */
-    String getVolume() {
-        return Volume;
+    public String getVolume() {
+        return volume;
     }
 
 
     /**
      * Sets the "volume" element
      */
-    void setVolume(String volume) {
+    public void setVolume(String volume) {
         this.volume = volume;
     }
 
@@ -435,15 +459,15 @@ public class Citation {
     /**
      * Gets the "year" element
      */
-    String getYear() {
-        return Year;
+    public String getYear() {
+        return year;
     }
 
 
     /**
      * Sets the "year" element
      */
-    void setYear(String year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -451,17 +475,16 @@ public class Citation {
     /**
      * Gets the "publicationType" element
      */
-    PublicationType getPublicationType() {
-        return PublicationType;
+    public PublicationType getPublicationType() {
+        return publicationType;
     }
 
 
     /**
      * Sets the "publicationType" element
      */
-    void setPublicationType(PublicationType publicationType) {
+    public void setPublicationType(PublicationType publicationType) {
         this.publicationType = publicationType;
     }
-
 
 }

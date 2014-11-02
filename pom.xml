@@ -7,6 +7,10 @@
     <groupId>groupId</groupId>
     <artifactId>citely</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+
 
     
 </project>

@@ -17,6 +17,7 @@
  */
 package org.blueclawsoft.citely.common;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -75,8 +76,10 @@ public class Citation {
     }
 
     /**
+     *
      * Gets the "entryKey" element
      */
+    @Column
     public Integer getOwnerId() {
         return ownerId;
     }
@@ -95,6 +98,7 @@ public class Citation {
      * can be the full address for lesser-known
      * publishers).
      */
+    @Column
     public String getAddress() {
         return address;
     }
@@ -112,6 +116,7 @@ public class Citation {
      * An annotation for annotated bibliography styles
      * (not typical).
      */
+    @Column
     public String getAnnote() {
         return annote;
     }
@@ -129,6 +134,7 @@ public class Citation {
      * The name(s) of the author(s) (in the case of
      * more than one author, separated by and)
      */
+    @Column
     public String getAuthor() {
         return author;
     }
@@ -146,6 +152,7 @@ public class Citation {
      * The title of the book, if only part of it is
      * being cited.
      */
+    @Column
     public String getBooktitle() {
         return booktitle;
     }
@@ -162,6 +169,7 @@ public class Citation {
      * <p/>
      * The chapter number.
      */
+    @Column
     public String getChapter() {
         return chapter;
     }
@@ -178,6 +186,7 @@ public class Citation {
      * <p/>
      * The key of the cross-referenced entry
      */
+    @Column
     public String getCrossref() {
         return crossref;
     }
@@ -195,6 +204,7 @@ public class Citation {
      * The edition of a book, long form (such as
      * "first" or "second")
      */
+    @Column
     public String getEdition() {
         return edition;
     }
@@ -211,6 +221,7 @@ public class Citation {
      * <p/>
      * The name(s) of the editor(s)
      */
+    @Column
     public String getEditor() {
         return editor;
     }
@@ -228,6 +239,7 @@ public class Citation {
      * A specification of an electronic publication,
      * often a preprint or a technical report
      */
+    @Column
     public String getEprint() {
         return eprint;
     }
@@ -245,6 +257,7 @@ public class Citation {
      * How it was published, if the publishing method
      * is nonstandard
      */
+    @Column
     public String getHowpublished() {
         return howpublished;
     }
@@ -262,6 +275,7 @@ public class Citation {
      * The institution that was involved in the
      * publishing, but not necessarily the publisher
      */
+    @Column
     public String getInstitution() {
         return institution;
     }
@@ -279,6 +293,7 @@ public class Citation {
      * The journal or magazine the work was published
      * in
      */
+    @Column
     public String getJournal() {
         return journal;
     }
@@ -300,6 +315,7 @@ public class Citation {
      * (mentioned just after this list) that is used to
      * cite or cross-reference the entry.
      */
+    @Column
     public String getKey() {
         return key;
     }
@@ -317,6 +333,7 @@ public class Citation {
      * The month of publication (or, if unpublished,
      * the month of creation)
      */
+    @Column
     public String getMonth() {
         return month;
     }
@@ -333,6 +350,7 @@ public class Citation {
      * <p/>
      * Miscellaneous extra information
      */
+    @Column
     public String getNote() {
         return note;
     }
@@ -351,6 +369,7 @@ public class Citation {
      * tech-report, if applicable. (Most publications
      * have a "volume", but no "number" field.)
      */
+    @Column
     public String getNumber() {
         return number;
     }
@@ -367,6 +386,7 @@ public class Citation {
      * <p/>
      * The conference sponsor
      */
+    @Column
     public String getOrganization() {
         return organization;
     }
@@ -384,6 +404,7 @@ public class Citation {
      * Page numbers, separated either by commas or
      * double-hyphens.
      */
+    @Column
     public String getPages() {
         return pages;
     }
@@ -400,6 +421,7 @@ public class Citation {
      * <p/>
      * The publisher's name
      */
+    @Column
     public String getPublisher() {
         return publisher;
     }
@@ -416,6 +438,7 @@ public class Citation {
      * <p/>
      * The school where the thesis was written
      */
+    @Column
     public String getSchool() {
         return school;
     }
@@ -434,6 +457,7 @@ public class Citation {
      * (e.g. "The Hardy Boys" or "Lecture Notes in
      * Computer Science")
      */
+    @Column
     public String getSeries() {
         return series;
     }
@@ -450,6 +474,7 @@ public class Citation {
      * <p/>
      * The title of the work
      */
+    @Column
     public String getTitle() {
         return title;
     }
@@ -467,6 +492,7 @@ public class Citation {
      * The type of tech-report, for example, "Research
      * Note"
      */
+    @Column
     public String getType() {
         return type;
     }
@@ -483,6 +509,7 @@ public class Citation {
      * <p/>
      * The WWW address
      */
+    @Column
     public String getUrl() {
         return url;
     }
@@ -499,6 +526,7 @@ public class Citation {
      * <p/>
      * The volume of a journal or multi-volume book
      */
+    @Column
     public String getVolume() {
         return volume;
     }
@@ -516,6 +544,7 @@ public class Citation {
      * The year of publication (or, if unpublished, the
      * year of creation)
      */
+    @Column
     public String getYear() {
         return year;
     }
@@ -532,6 +561,7 @@ public class Citation {
      * <p/>
      * What kind of publication this is
      */
+    @Column
     public Integer getPublicationType() {
         return publicationType;
     }

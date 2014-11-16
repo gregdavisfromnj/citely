@@ -18,24 +18,22 @@
 package org.blueclawsoft.citely.common;
 
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * A PublicationType, serving as an enumeration mapping from integer/id
  * to string/name.  This declares what type a publication is being
  * referenced.
  */
+@Entity
 public class PublicationType {
 
     private Integer id;
     private String name;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    @Id
     public Integer getId() {
         return id;
     }
@@ -60,5 +58,15 @@ public class PublicationType {
                 new Enum("techreport", INT_TECHREPORT),
                 new Enum("unpublished", INT_UNPUBLISHED),
           */
+
+    @Column
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
 }

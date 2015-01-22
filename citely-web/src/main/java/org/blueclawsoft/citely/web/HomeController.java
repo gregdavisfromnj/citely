@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/web")
 public class HomeController {
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public String home(ModelMap model) {
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index(ModelMap model) {
         model.addAttribute("msg", "Citely Home");
-        return "home";
+        return "index";
     }
 
 }

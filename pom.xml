@@ -9,7 +9,10 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-
+    <modules>
+        <module>citely-common</module>
+        <module>citely-web</module>
+    </modules>
 
 
     

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Citely</title>
 </head>
 <body>
 <!--/* Standard layout can be mixed with Layout Dialect */-->
-<div th:replace="fragments/header :: header">
+<!--<div th:replace="fragments/header :: header">
     ...
-</div>
+</div>-->
 <div class="container">
     <div layout:fragment="content">
         <!-- ============================================================================ -->
@@ -25,5 +26,7 @@
             Phasellus et placerat elit.
         </p>
     </div>
-    <div th:replace="fragments/footer :: footer">&copy; 2014 The Static Templates</div></body>
+    </div>
+  <!--  <div th:replace="fragments/footer :: footer">&copy; 2014 The Static Templates</div> -->
+</body>
 </html>

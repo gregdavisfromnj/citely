@@ -1,19 +1,17 @@
-/**
- * Created by greg on 12/27/2014.
- */
 package org.blueclawsoft.citely.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * Created by Gregory on 6/21/2015.
+ */
 @Controller
-public class HomeController {
-
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home() {
-        return "home";
+public class ReferencesController {
+    @RequestMapping(value = "/references", method = RequestMethod.GET)
+    public String references() {
+        return "references";
     }
 
 }

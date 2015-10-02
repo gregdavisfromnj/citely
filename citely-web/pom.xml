@@ -14,7 +14,7 @@
     <artifactId>citely-web</artifactId>
 
     <properties>
-        <spring.version>4.1.3.RELEASE</spring.version>
+        <spring.version>4.1.6.RELEASE</spring.version>
         <bootstrap.version>3.3.2</bootstrap.version>
         <jquery.version>2.1.3</jquery.version>
         <jstl.version>1.2</jstl.version>
@@ -22,6 +22,14 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-servlet-api</artifactId>
+            <version>7.0.64</version>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -125,11 +133,7 @@
                 <version>2.2</version>
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
-                    <!--<server>TomcatServer</server>-->
                     <path>/citely</path>
-                    <additionalClasspathDirs>
-                        <additionalClasspathDir></additionalClasspathDir>
-                    </additionalClasspathDirs>
                 </configuration>
             </plugin>
             <plugin>

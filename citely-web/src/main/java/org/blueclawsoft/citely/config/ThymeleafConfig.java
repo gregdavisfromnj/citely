@@ -1,10 +1,14 @@
 package org.blueclawsoft.citely.config;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.thymeleaf.dialect.IDialect;
-import org.thymeleaf.spring4.SpringTemplateEngine;
-import org.thymeleaf.spring4.view.ThymeleafViewResolver;
+import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 import java.util.HashSet;
@@ -14,10 +18,18 @@ import java.util.Set;
  * Created by greg on 10/1/2015.
  */
 @Configuration
-public class ThymeleafConfig {
+public class ThymeleafConfig implements ApplicationContextAware {
+
+    private ApplicationContext applicationContext;
+
+    public void setApplicationContext(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
+
     @Bean
-    public ServletContextTemplateResolver getTemplateResolver() {
-        ServletContextTemplateResolver resolver = new ServletContextTemplateResolver();
+    public ITemplateResolver getTemplateResolver() {
+        SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
+        resolver.setApplicationContext(applicationContext);
         resolver.setPrefix("/WEB-INF/templates/");
         resolver.setSuffix(".html");
         resolver.setTemplateMode("HTML5");

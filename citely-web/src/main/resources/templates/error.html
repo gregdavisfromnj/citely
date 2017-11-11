@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title th:text="#{citely.title}">Citely</title>
+
+    <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+          href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div layout:fragment="content">
+    <h2 th:text="#{citely.error}">An error occurred.</h2>
+</div>
+
+<script th:src="@{/webjars/jquery/3.2.1/jquery.js}"
+        src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.js"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.js}"
+        src="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

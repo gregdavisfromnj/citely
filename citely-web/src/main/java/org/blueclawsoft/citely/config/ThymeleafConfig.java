@@ -40,6 +40,7 @@ public class ThymeleafConfig implements ApplicationContextAware {
     public SpringTemplateEngine getTemplateEngine() {
         Set<IDialect> dialects = new HashSet<IDialect>();
         dialects.add(new nz.net.ultraq.thymeleaf.LayoutDialect());
+        dialects.add(new org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect());
 
         SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.setTemplateResolver(getTemplateResolver());

@@ -14,10 +14,11 @@
     <artifactId>citely-web</artifactId>
 
     <properties>
-        <spring-boot.version>2.0.6.RELEASE</spring-boot.version>
-        <spring.version>5.1.1.RELEASE</spring.version>
-        <spring-security-oauth.version>2.3.4.RELEASE</spring-security-oauth.version>
-        <spring-security-jwt.version>1.0.9.RELEASE</spring-security-jwt.version>
+        <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
+        <spring.version>5.1.9.RELEASE</spring.version>
+        <spring-security-web.version>5.1.6.RELEASE</spring-security-web.version>
+        <spring-security-oauth.version>2.3.6.RELEASE</spring-security-oauth.version>
+        <spring-security-jwt.version>1.0.10.RELEASE</spring-security-jwt.version>
         <bootstrap.version>3.3.7</bootstrap.version>
         <jquery.version>3.2.1</jquery.version>
         <thymeleaf.version>3.0.10.RELEASE</thymeleaf.version>
@@ -40,7 +41,7 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring-security-web.version}</version>
         </dependency>
 
         <dependency>
@@ -162,7 +163,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.7</version>
+            <version>2.9.9.3</version>
         </dependency>
 
     </dependencies>

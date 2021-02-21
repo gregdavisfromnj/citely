@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html  xmlns:th="http://www.thymeleaf.org"
-       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head lang="en">
     <meta charset="UTF-8"/>
     <title th:text="#{citely.title}">Citely</title>
@@ -29,7 +28,16 @@
                 <li><a href="#" th:href="@{/tags}">Tags</a></li>
                 <li><a href="#" th:href="@{/references}">References</a></li>
             </ul>
-            <p class="navbar-text navbar-right">Logged in as <span sec:authentication="name">Bob</span></p>
+
+            <div th:if="${#authorization.expression('isAuthenticated()')}" class="navbar-form navbar-right" >
+                <span th:text="${#authentication.principal.fullName}">Bob</span>
+                <button id="logout-btn" class="btn btn-default">Logout</button>
+            </div>
+
+            <p class="navbar-text navbar-right" th:unless="${#authorization.expression('isAuthenticated()')}" >
+                <a href="#" th:href="@{/login}">Login</a>
+            </p>
+
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search"/>
@@ -44,5 +52,7 @@
         src="http://cdn.jsdelivr.net/webjars/jquery/3.2.1/jquery.js"></script>
 <script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.js}"
         src="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script th:src="@{/js/header.js}"
+        src="../static/js/header.js"></script>
 </body>
 </html>

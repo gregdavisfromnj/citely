@@ -14,8 +14,9 @@
     <artifactId>citely-common</artifactId>
 
     <properties>
-        <querydsl.version>3.5.0</querydsl.version>
-        <hibernate.version>4.3.6.Final</hibernate.version>
+        <querydsl.version>3.7.4</querydsl.version>
+        <hibernate.version>5.4.23.Final</hibernate.version>
+        <log4j.version>2.14.0</log4j.version>
     </properties>
 
     <dependencies>
@@ -32,7 +33,6 @@
             <version>${querydsl.version}</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>com.mysema.querydsl</groupId>
             <artifactId>querydsl-jpa</artifactId>
@@ -40,11 +40,15 @@
         </dependency>
 
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.6.1</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

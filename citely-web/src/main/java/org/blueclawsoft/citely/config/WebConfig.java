@@ -1,6 +1,5 @@
 package org.blueclawsoft.citely.config;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -30,5 +29,4 @@ public class WebConfig implements WebMvcConfigurer {
         source.setBasename("Messages");
         return source;
     }
-
 }
